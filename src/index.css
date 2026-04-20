@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800;900&family=DM+Sans:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white text-ink font-sans antialiased;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+  }
+  ::selection {
+    @apply bg-brand-pink text-white;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-[1120px] px-5;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1.5 rounded-pill border border-brand-pink/25 bg-brand-pink/10 px-3.5 py-[5px] text-[11px] font-bold uppercase tracking-[0.07em] text-brand-magenta;
+    font-family: "DM Sans", sans-serif;
+  }
+
+  .cta-primary {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    @apply inline-flex items-center gap-2.5 rounded-pill px-8 py-4 text-sm font-bold uppercase tracking-wide text-white shadow-brand-cta transition-all duration-300 hover:-translate-y-0.5 hover:shadow-brand-cta-hover hover:scale-[1.02] animate-pulse-ring;
+    background: linear-gradient(
+      135deg,
+      #833ab4 0%,
+      #c13584 25%,
+      #e1306c 50%,
+      #fd1d1d 75%,
+      #f77737 100%
+    );
+    background-size: 200% 200%;
+    animation:
+      pulse-ring 2.5s infinite,
+      gradient-shift 6s ease infinite;
+    font-family: "Sora", sans-serif;
+    letter-spacing: 0.02em;
+  }
+  .cta-primary::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      120deg,
+      transparent 20%,
+      rgba(255, 255, 255, 0.5) 50%,
+      transparent 80%
+    );
+    transform: translateX(-120%) skewX(-20deg);
+    pointer-events: none;
+    z-index: 1;
+  }
+  .cta-primary:hover::before {
+    animation: shimmer 1.1s ease-out;
+  }
+  .cta-primary > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  .cta-secondary {
+    @apply inline-flex items-center gap-2 rounded-pill bg-white border border-ink-gray200 px-6 py-3.5 text-sm font-bold uppercase tracking-wide text-ink transition hover:border-brand-pink hover:text-brand-pink hover:-translate-y-0.5;
+    font-family: "DM Sans", sans-serif;
+  }
+
+  .section-pad {
+    @apply py-20;
+  }
+
+  .section-header {
+    @apply text-center mb-[52px];
+  }
+  .section-header h2 {
+    @apply font-display font-extrabold text-[clamp(26px,3.8vw,44px)] leading-[1.15] tracking-[-0.03em] text-ink mt-3.5;
+  }
+  .section-header p {
+    @apply text-ink-gray400 text-base mt-3.5 max-w-lg mx-auto leading-[1.65];
+  }
+
+  .text-ig-gradient {
+    background: linear-gradient(
+      135deg,
+      #833ab4 0%,
+      #c13584 30%,
+      #e1306c 55%,
+      #fd1d1d 75%,
+      #f77737 100%
+    );
+    background-size: 200% 200%;
+    animation: gradient-shift 6s ease infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+  }
+
+  .hover-glow {
+    @apply transition-all duration-300;
+  }
+  .hover-glow:hover {
+    box-shadow:
+      0 0 0 1px rgba(225, 48, 108, 0.3),
+      0 18px 40px -12px rgba(225, 48, 108, 0.35);
+    transform: translateY(-4px);
+  }
+
+  /* Animated blob backdrop */
+  .blob {
+    position: absolute;
+    filter: blur(60px);
+    opacity: 0.45;
+    animation:
+      blob 14s ease-in-out infinite,
+      float-slow 12s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee-x 22s linear infinite;
+    will-change: transform;
+  }
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+  @keyframes marquee-x {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+
+  /* Gradient rotating ring */
+  .ring-rotate {
+    position: relative;
+  }
+  .ring-rotate::before {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    border-radius: 9999px;
+    padding: 3px;
+    background: conic-gradient(
+      from 0deg,
+      #833ab4,
+      #c13584,
+      #e1306c,
+      #fd1d1d,
+      #f77737,
+      #833ab4
+    );
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: rotate-slow 8s linear infinite;
+  }
+}
