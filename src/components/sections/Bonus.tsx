@@ -144,7 +144,7 @@ export function Bonus() {
               className="relative inline-flex items-center gap-2 rounded-pill bg-white text-brand-magenta px-9 py-4 font-bold text-sm uppercase tracking-wide shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:scale-[1.03]"
               style={{ fontFamily: "Sora, sans-serif" }}
             >
-              Claim My Spot →
+              Claim My Spot → 
             </button>
             <p className="mt-4 text-white/80 text-sm">
               Only for the next 2 creators this month.
