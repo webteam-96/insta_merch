@@ -111,7 +111,7 @@ export function SocialProof() {
               <br className="hidden sm:block" /> of Industry Experts
             </h2>
 
-            <p>Everything your merchandise brand needs — delivered end-to-end.</p>
+            <p>Everything your merchandise brand needs, delivered end-to-end.</p>
 
           </div>
         </Reveal>

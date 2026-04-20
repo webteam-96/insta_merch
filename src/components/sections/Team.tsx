@@ -56,7 +56,7 @@ export function Team() {
         </Reveal>
 
         {/* WIN-WIN callout */}
-        <Reveal delay={0.2}>
+        {/* <Reveal delay={0.2}>
           <div
             className="mt-12 rounded-xl px-8 py-10 border text-center relative overflow-hidden"
             style={{
@@ -89,7 +89,7 @@ export function Team() {
               </p>
             </div>
           </div>
-        </Reveal>
+        </Reveal> */}
       </div>
     </section>
   );

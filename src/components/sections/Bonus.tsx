@@ -4,8 +4,8 @@ import { useFormModal } from "../form/FormModal";
 
 const bonuses = [
   {
-    value: "₹1,00,000",
-    title: "Aggressive Launch Marketing & Paid Ads Funnel Strategy",
+    value: "₹75,000",
+    title: "Custom Brand Identity & Premium Packaging Design",
   },
   {
     value: "₹1,00,000",
@@ -15,9 +15,10 @@ const bonuses = [
     value: "₹75,000",
     title: "Complete Operations & Supply Chain Automation Setup",
   },
+
   {
-    value: "₹75,000",
-    title: "Custom Brand Identity & Premium Packaging Design",
+    value: "₹1,00,000",
+    title: "Aggressive Launch Marketing & Paid Ads Funnel Strategy",
   },
 ];
 
@@ -69,11 +70,11 @@ export function Bonus() {
       ))}
 
       <div className="container-x relative">
-        <Reveal>
+        {/* <Reveal>
           <span className="inline-flex items-center gap-2 rounded-pill bg-white/15 border border-white/25 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.15em] text-white mb-5 backdrop-blur">
             100% Free Strategy Session
           </span>
-        </Reveal>
+        </Reveal> */}
         <Reveal delay={0.05}>
           <h2 className="font-display font-black text-[clamp(28px,4.5vw,52px)] leading-[1.1] -tracking-[0.03em] max-w-3xl mx-auto">
             Exclusive Bonuses Worth{" "}

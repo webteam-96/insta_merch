@@ -150,7 +150,7 @@ export function ScaleLikeAWhale() {
               </p>
             </Reveal>
 
-            <Reveal delay={0.26}>
+            {/* <Reveal delay={0.26}>
               <div
                 className="rounded-xl py-5 border relative overflow-hidden"
                 style={{
@@ -180,7 +180,7 @@ export function ScaleLikeAWhale() {
                   Takes 30 minutes · No commitment required
                 </p>
               </div>
-            </Reveal>
+            </Reveal> */}
           </div>
         </div>
       </div>
