@@ -95,12 +95,12 @@ export function Bonus() {
             </span>
           </h2>
         </Reveal>
-        <Reveal delay={0.1}>
+        {/* <Reveal delay={0.1}>
           <p className="mt-4 text-white/85 max-w-xl mx-auto text-[15px]">
             Included free when you partner with us this month — bundled with
             every brand launch.
           </p>
-        </Reveal>
+        </Reveal> */}
 
         <div className="mt-12 grid grid-cols-2 gap-3 sm:gap-4 max-w-4xl mx-auto text-left">
           {bonuses.map((b, i) => (

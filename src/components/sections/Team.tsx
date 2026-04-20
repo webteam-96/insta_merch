@@ -1,4 +1,4 @@
-import { CTAButton } from "../ui/CTAButton";
+
 import { Reveal } from "../ui/Reveal";
 
 export function Team() {
