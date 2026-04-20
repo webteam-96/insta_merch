@@ -4,22 +4,22 @@ import { Reveal } from "../ui/Reveal";
 const pains = [
   {
     title: "Poor Monetization Channels",
-    body: "Creators leave money on the table by not giving their audience a way to buy directly from them.",
+    body: "No direct way for your audience to buy.",
     image: "/01.png",
   },
   {
     title: "Operational Headaches",
-    body: "You don't have the time to source products, pack boxes, or manage logistics, so you just don't do it.",
+    body: "No time for sourcing, packing, or logistics.",
     image: "/02.png",
   },
   {
     title: "Poor Brand Experience",
-    body: "Selling cheap, generic print-on-demand tees damages your premium image and trust.",
+    body: "Cheap, generic merch hurts your premium image.",
     image: "/03.png",
   },
   {
     title: "High Setup Costs",
-    body: "Hiring a separate designer, developer, marketer, and operations team drains your capital and takes months to coordinate.",
+    body: "Hiring separate teams is expensive and slow.",
     image: "/04.png",
   },
 ];

@@ -7,8 +7,12 @@ export function FinalCTA() {
       <div className="container-x">
         <Reveal>
           <div
-            className="rounded-xl border p-10 sm:p-14 text-center relative overflow-hidden"
+            className="rounded-xl border text-center relative overflow-hidden"
             style={{
+              paddingTop: "2rem",
+              paddingBottom: "2rem",
+              paddingLeft: "1rem",
+              paddingRight: "1rem",
               background:
                 "linear-gradient(135deg, #FCE7F3 0%, #FDEDDC 50%, #FFF8F2 100%)",
               borderColor: "rgba(225, 48, 108, 0.2)",
@@ -46,7 +50,7 @@ export function FinalCTA() {
             </ul>
 
             <div className="mt-10">
-              <CTAButton>Book My Free Strategy Session</CTAButton>
+              <CTAButton>Book My 1-on-1 Brand Launch Call </CTAButton>
             </div>
           </div>
         </Reveal>

@@ -110,10 +110,9 @@ export function SocialProof() {
               <span className="text-ig-gradient">PROVEN TEAM</span>
               <br className="hidden sm:block" /> of Industry Experts
             </h2>
-            <p>
-              Three specialists. One streamlined engine. Everything your
-              merchandise brand needs — delivered end-to-end.
-            </p>
+
+            <p>Everything your merchandise brand needs — delivered end-to-end.</p>
+
           </div>
         </Reveal>
 
@@ -139,9 +138,7 @@ export function SocialProof() {
             <h3 className="font-display font-extrabold text-[clamp(20px,2.5vw,26px)] -tracking-[0.02em] text-ink mb-2 relative">
               Let's map your ₹50L growth plan in 30 minutes.
             </h3>
-            <p className="text-ink-gray600 mb-5 text-[15px] relative">
-              Free strategy call · No commitment · Custom roadmap included.
-            </p>
+
             <button
               type="button"
               onClick={open}

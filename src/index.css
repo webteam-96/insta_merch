@@ -82,11 +82,13 @@
   }
 
   .section-pad {
-    @apply py-20;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
 
   .section-header {
-    @apply text-center mb-[52px];
+    margin-bottom: 20px;
+    text-align: center;
   }
   .section-header h2 {
     @apply font-display font-extrabold text-[clamp(26px,3.8vw,44px)] leading-[1.15] tracking-[-0.03em] text-ink mt-3.5;

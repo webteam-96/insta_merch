@@ -1,4 +1,4 @@
-import { Gift, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
 import { Reveal } from "../ui/Reveal";
 import { useFormModal } from "../form/FormModal";
 
@@ -116,9 +116,9 @@ export function Bonus() {
                     }}
                   />
                 </div>
-                <div className="relative w-10 h-10 sm:w-12 sm:h-12 rounded-[10px] sm:rounded-[12px] bg-white flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:rotate-[-8deg] group-hover:scale-110">
+                {/* <div className="relative w-10 h-10 sm:w-12 sm:h-12 rounded-[10px] sm:rounded-[12px] bg-white flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:rotate-[-8deg] group-hover:scale-110">
                   <Gift className="h-5 w-5 sm:h-6 sm:w-6 text-brand-pink" strokeWidth={2.4} />
-                </div>
+                </div> */}
                 <div className="relative">
                   <div className="font-display font-black text-base sm:text-xl text-brand-yellow leading-none">
                     {b.value}

@@ -1,6 +1,5 @@
 import { Calendar, Users, Zap } from "lucide-react";
 import { Reveal } from "../ui/Reveal";
-import { useFormModal } from "../form/FormModal";
 
 const highlights = [
   { icon: Users, label: "Just 2 slots / month" },
@@ -9,7 +8,6 @@ const highlights = [
 ];
 
 export function Scarcity() {
-  const { open } = useFormModal();
   return (
     <section
       className="section-pad relative overflow-hidden"
@@ -58,7 +56,7 @@ export function Scarcity() {
       <div className="container-x relative">
         <div className="grid grid-cols-1 lg:grid-cols-[auto,1fr] gap-10 lg:gap-16 items-center">
           {/* Big "2" focal number with pulse rings */}
-          <Reveal>
+          {/* <Reveal>
             <div className="relative w-[220px] h-[220px] sm:w-[260px] sm:h-[260px] mx-auto">
               <span
                 aria-hidden
@@ -90,7 +88,7 @@ export function Scarcity() {
                 2
               </div>
             </div>
-          </Reveal>
+          </Reveal> */}
 
           {/* Copy */}
           <div>
@@ -141,7 +139,7 @@ export function Scarcity() {
               </ul>
             </Reveal>
 
-            <Reveal delay={0.28}>
+            {/* <Reveal delay={0.28}>
               <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4">
                 <button
                   type="button"
@@ -155,7 +153,7 @@ export function Scarcity() {
                   30 minutes · Let's discuss your brand vision
                 </p>
               </div>
-            </Reveal>
+            </Reveal> */}
           </div>
         </div>
       </div>

@@ -14,8 +14,10 @@ export function ScaleLikeAWhale() {
   return (
     <section
       ref={ref}
-      className="section-pad relative overflow-hidden"
+      className="relative overflow-hidden"
       style={{
+        paddingTop: "2rem",
+        paddingBottom: "2rem",
         background:
           "linear-gradient(180deg, #EAF6FF 0%, #CFEAFF 45%, #B0D8FA 100%)",
       }}
@@ -150,8 +152,10 @@ export function ScaleLikeAWhale() {
 
             <Reveal delay={0.26}>
               <div
-                className="rounded-xl px-6 py-5 border relative overflow-hidden"
+                className="rounded-xl py-5 border relative overflow-hidden"
                 style={{
+                  paddingLeft: "1rem",
+                  paddingRight: "1rem",
                   background:
                     "linear-gradient(135deg, rgba(255,255,255,0.75), rgba(252,231,243,0.8))",
                   borderColor: "rgba(225, 48, 108, 0.25)",

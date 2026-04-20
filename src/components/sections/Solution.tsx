@@ -35,17 +35,19 @@ export function Solution() {
               <em className="not-italic text-ig-gradient">more revenue</em>{" "}
               without stealing hours from your content creation
             </h2>
-            <p className="mt-3 text-[15px] text-ink-gray600">
+            {/* <p className="mt-3 text-[15px] text-ink-gray600">
               Three phases. One proven system. Zero guesswork on your end.
-            </p>
+            </p> */}
           </div>
         </Reveal>
       </div>
 
       {/* Gradient cream band with blobs */}
       <div
-        className="mt-10 py-[52px] relative overflow-hidden"
+        className="mt-10 relative overflow-hidden"
         style={{
+          paddingTop: "20px",
+          paddingBottom: "52px",
           background:
             "linear-gradient(135deg, #FCE7F3 0%, #FDEDDC 50%, #FFF8F2 100%)",
         }}
@@ -77,7 +79,7 @@ export function Solution() {
         />
 
         <div className="container-x relative">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative">
+          <div className="grid grid-cols-1 md:grid-cols-3 relative" style={{ gap: "0.5rem" }}>
             {/* Connector line on desktop */}
             <div
               aria-hidden
@@ -92,7 +94,7 @@ export function Solution() {
               const Icon = p.icon;
               return (
                 <Reveal key={p.title} delay={i * 0.1}>
-                  <div className="relative bg-white/80 backdrop-blur rounded-[16px] px-6 py-7 flex items-start gap-[18px] transition-all duration-300 hover:bg-white hover:-translate-y-2 hover:shadow-lg h-full group overflow-hidden">
+                  <div className="relative bg-white/80 backdrop-blur rounded-[16px] px-6 flex items-start gap-[18px] transition-all duration-300 hover:bg-white hover:-translate-y-2 hover:shadow-lg h-full group overflow-hidden" style={{ paddingTop: "1.05rem", paddingBottom: "1.05rem" }}>
                     {/* Step number watermark */}
                     <span
                       aria-hidden
