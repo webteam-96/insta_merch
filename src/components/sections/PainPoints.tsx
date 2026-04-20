@@ -32,7 +32,9 @@ export function PainPoints() {
           <div className="section-header">
             <span className="badge">Why Most Creators Fail</span>
             <h2>
-              <span className="text-ig-gradient italic">THIS IS WHY</span>{" "}
+              <span className="text-ig-gradient italic inline-block pr-2">
+                THIS IS WHY
+              </span>{" "}
               Your Influence Struggles To Scale Profitably
             </h2>
             <p>
