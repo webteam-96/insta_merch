@@ -1,32 +1,31 @@
-import { Target, Calculator, PenTool } from "lucide-react";
 import { Reveal } from "../ui/Reveal";
 import { useFormModal } from "../form/FormModal";
 import { useCountUp } from "../../hooks/useCountUp";
-
-type Role = {
-  title: string;
-  body: string;
-  icon: typeof Target;
-  tint: string;
-};
+import { TeamCarousel, type Role } from "../ui/TeamCarousel";
 
 const roles: Role[] = [
   {
-    title: "The Shark Tank Marketer",
-    body: "Guided three brands to Shark Tank India. We turn your campaigns into massive revenue engines.",
-    icon: Target,
+    title: "The Obsessive Copywriter",
+    name: "Yuvraj Thakkar",
+    photo: "/yuvraj-thakkar.png",
+    linkedin: "https://www.linkedin.com/in/yuvraj-thakkar-7047b4ab",
+    body: "Over a decade of advertising expertise. We craft compelling brand stories that connect and convert.",
     tint: "#833AB4",
   },
   {
     title: "The CA Operations Mind",
+    name: "Varish Shah",
+    photo: "/Varish-Shah.png",
+    linkedin: "https://www.linkedin.com/in/varish-shah-4abb55137",
     body: "Proven experience scaling e-commerce brands. We keep your logistics smooth and your finances perfectly balanced.",
-    icon: Calculator,
     tint: "#E1306C",
   },
   {
-    title: "The Obsessive Copywriter",
-    body: "Over a decade of advertising expertise. We craft compelling brand stories that connect and convert.",
-    icon: PenTool,
+    title: "The Shark Tank Marketer",
+    name: "Vishnu Chauhan",
+    photo: "/Vishnu-Chauhan.jpg",
+    linkedin: "https://www.linkedin.com/in/vishnu-chauhan-bb85a1222",
+    body: "Guided three brands to Shark Tank India. We turn your campaigns into massive revenue engines.",
     tint: "#F77737",
   },
 ];
@@ -118,45 +117,7 @@ export function SocialProof() {
           </div>
         </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-16">
-          {roles.map((r, i) => {
-            const Icon = r.icon;
-            return (
-              <Reveal key={r.title} delay={i * 0.08}>
-                <div className="relative bg-white border border-ink-gray200 rounded-lg p-6 h-full shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-brand-pink/30 group overflow-hidden">
-                  <span
-                    aria-hidden
-                    className="absolute top-0 left-0 right-0 h-[3px]"
-                    style={{
-                      background: `linear-gradient(90deg, ${r.tint}, #E1306C, #F77737)`,
-                    }}
-                  />
-                  <div
-                    aria-hidden
-                    className="absolute -top-12 -right-12 w-32 h-32 rounded-full blur-2xl opacity-0 group-hover:opacity-70 transition-opacity duration-500"
-                    style={{
-                      background: `radial-gradient(circle, ${r.tint}33, transparent 70%)`,
-                    }}
-                  />
-                  <div
-                    className="relative w-12 h-12 rounded-[12px] flex items-center justify-center text-white mb-4 transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6"
-                    style={{
-                      background: `linear-gradient(135deg, ${r.tint}, #E1306C, #F77737)`,
-                    }}
-                  >
-                    <Icon className="h-6 w-6" strokeWidth={2.2} />
-                  </div>
-                  <h3 className="relative font-display font-extrabold text-[17px] -tracking-[0.02em] text-ink mb-2">
-                    {r.title}
-                  </h3>
-                  <p className="relative text-[13.5px] text-ink-gray600 leading-[1.65]">
-                    {r.body}
-                  </p>
-                </div>
-              </Reveal>
-            );
-          })}
-        </div>
+        <TeamCarousel roles={roles} />
 
         {/* Stats */}
         <Reveal delay={0.1}>

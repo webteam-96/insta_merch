@@ -5,7 +5,6 @@ const items = [
   "30-Day Brand Launch",
   "Done-For-You System",
   "Premium Brand Identity",
-  "White-Glove Fulfilment",
   "Only 2 Creators Per Month",
 ];
 

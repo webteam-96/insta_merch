@@ -89,7 +89,7 @@ export function Hero() {
       <div className="container-x relative">
         <div className="grid grid-cols-1 md:grid-cols-[60%_40%] items-stretch min-h-[520px]">
           {/* LEFT */}
-          <div className="flex flex-col justify-center py-5 md:pr-14">
+          <div className="order-2 md:order-1 flex flex-col justify-center py-5 md:pr-14">
             <Reveal>
               <p
                 className="font-display font-bold text-[clamp(14px,1.5vw,17px)] -tracking-tight mb-1.5"
@@ -176,7 +176,7 @@ export function Hero() {
           </div>
 
           {/* RIGHT card */}
-          <div className="flex items-start justify-start py-5 md:px-5 relative">
+          <div className="order-1 md:order-2 flex items-start justify-start py-5 md:px-5 relative">
             <motion.div
               style={{ y: imageY, scale: imageScale }}
               className="w-full"

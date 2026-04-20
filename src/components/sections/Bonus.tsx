@@ -101,10 +101,10 @@ export function Bonus() {
           </p>
         </Reveal>
 
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-4xl mx-auto text-left">
+        <div className="mt-12 grid grid-cols-2 gap-3 sm:gap-4 max-w-4xl mx-auto text-left">
           {bonuses.map((b, i) => (
             <Reveal key={b.title} delay={i * 0.08}>
-              <div className="relative bg-white/12 backdrop-blur-sm rounded-lg border border-white/25 p-5 flex items-start gap-4 transition-all duration-300 hover:bg-white/20 hover:-translate-y-1 hover:shadow-[0_15px_40px_rgba(0,0,0,0.3)] h-full group overflow-hidden">
+              <div className="relative bg-white/12 backdrop-blur-sm rounded-lg border border-white/25 p-3 sm:p-5 flex flex-col sm:flex-row items-start gap-3 sm:gap-4 transition-all duration-300 hover:bg-white/20 hover:-translate-y-1 hover:shadow-[0_15px_40px_rgba(0,0,0,0.3)] h-full group overflow-hidden">
                 <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
                   <span
                     className="absolute inset-0 block"
@@ -116,17 +116,17 @@ export function Bonus() {
                     }}
                   />
                 </div>
-                <div className="relative w-12 h-12 rounded-[12px] bg-white flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:rotate-[-8deg] group-hover:scale-110">
-                  <Gift className="h-6 w-6 text-brand-pink" strokeWidth={2.4} />
+                <div className="relative w-10 h-10 sm:w-12 sm:h-12 rounded-[10px] sm:rounded-[12px] bg-white flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:rotate-[-8deg] group-hover:scale-110">
+                  <Gift className="h-5 w-5 sm:h-6 sm:w-6 text-brand-pink" strokeWidth={2.4} />
                 </div>
                 <div className="relative">
-                  <div className="font-display font-black text-xl text-brand-yellow leading-none">
+                  <div className="font-display font-black text-base sm:text-xl text-brand-yellow leading-none">
                     {b.value}
-                    <span className="text-white/60 text-xs font-sans font-normal ml-1">
+                    <span className="text-white/60 text-[10px] sm:text-xs font-sans font-normal ml-1">
                       Value
                     </span>
                   </div>
-                  <p className="mt-2 text-white/95 text-[14px] leading-[1.5]">
+                  <p className="mt-1.5 sm:mt-2 text-white/95 text-[12.5px] sm:text-[14px] leading-[1.45] sm:leading-[1.5]">
                     {b.title}
                   </p>
                 </div>

@@ -42,10 +42,10 @@ export function PainPoints() {
           </div>
         </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           {pains.map((p, i) => (
             <Reveal key={p.title} delay={i * 0.08}>
-              <div className="relative bg-white rounded-lg px-6 py-7 shadow-sm border border-brand-red/[0.12] overflow-hidden h-full hover-glow group">
+              <div className="relative bg-white rounded-lg px-4 sm:px-5 py-6 shadow-sm border border-brand-red/[0.12] overflow-hidden h-full hover-glow group text-center sm:text-left">
                 <span
                   className="absolute top-0 left-0 right-0 h-[3px]"
                   style={{
@@ -60,7 +60,7 @@ export function PainPoints() {
                       "radial-gradient(circle, rgba(239,68,68,0.25), transparent 70%)",
                   }}
                 />
-                <div className="w-32 h-32 sm:w-36 sm:h-36 mb-5 rounded-[16px] overflow-hidden bg-gradient-to-br from-red-50 to-orange-50 border border-red-100 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 group-hover:-rotate-3">
+                <div className="w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 mb-4 rounded-[16px] overflow-hidden bg-gradient-to-br from-red-50 to-orange-50 border border-red-100 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 group-hover:-rotate-3 mx-auto sm:mx-0">
                   <img
                     src={p.image}
                     alt={p.title}
@@ -68,10 +68,10 @@ export function PainPoints() {
                     loading="lazy"
                   />
                 </div>
-                <h3 className="font-display text-lg sm:text-xl font-bold -tracking-[0.02em] mb-2 text-ink">
+                <h3 className="font-display text-[15px] sm:text-base lg:text-lg font-bold -tracking-[0.02em] mb-2 text-ink">
                   {p.title}
                 </h3>
-                <p className="text-[13.5px] text-ink-gray400 leading-[1.65]">
+                <p className="text-[13px] text-ink-gray400 leading-[1.6]">
                   {p.body}
                 </p>
               </div>
