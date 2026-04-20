@@ -22,6 +22,13 @@ export function Hero() {
 
   return (
     <section id="top" ref={ref} className="bg-white relative overflow-hidden">
+      {/* SEO H1 — visible to crawlers, hidden from sighted users (the visual hero headline below is design-optimized) */}
+      <h1 className="sr-only">
+        Insta Merch — Done-For-You Creator Merchandise Brand Launch for
+        Instagram Influencers with 100K+ Followers. Add ₹50L+ Revenue Per Year
+        in 30 Days. Built by the Team Behind 3 Shark Tank India Brands.
+      </h1>
+
       {/* Animated announcement ribbon */}
       <div
         className="text-white text-center font-semibold text-[12.5px] sm:text-[13px] tracking-[0.02em] px-5 py-2.5 relative overflow-hidden"
@@ -96,9 +103,12 @@ export function Hero() {
             </Reveal>
 
             <Reveal delay={0.05}>
-              <h1 className="font-display font-black text-[clamp(38px,5.5vw,64px)] leading-[1] -tracking-[0.04em] text-ink mb-3">
+              <p
+                className="font-display font-black text-[clamp(38px,5.5vw,64px)] leading-[1] -tracking-[0.04em] text-ink mb-3"
+                aria-hidden="true"
+              >
                 AT LEAST <em className="not-italic text-ig-gradient">₹50L+</em>
-              </h1>
+              </p>
             </Reveal>
 
             <Reveal delay={0.1}>

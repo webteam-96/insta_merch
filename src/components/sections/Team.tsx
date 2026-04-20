@@ -40,7 +40,7 @@ const team = [
 
 export function Team() {
   return (
-    <section className="section-pad bg-white relative overflow-hidden">
+    <section id="team" className="section-pad bg-white relative overflow-hidden">
       <div className="container-x relative">
         {/* Centered header */}
         <Reveal>
