@@ -44,29 +44,27 @@ export function Team() {
       <div className="container-x relative">
         {/* Centered header */}
         <Reveal>
-          <div className="text-center max-w-3xl mx-auto">
-            <span className="badge">The Dream Team Guarantee</span>
-
-            {/* Shield / hero whale graphic */}
-            <div className="mt-8 flex justify-center">
-              <div className="relative">
-                <div
-                  aria-hidden
-                  className="absolute -inset-4 rounded-full blur-2xl opacity-60"
-                  style={{
-                    background:
-                      "linear-gradient(135deg, rgba(131,58,180,0.35), rgba(225,48,108,0.35), rgba(247,119,55,0.35))",
-                  }}
-                />
-                <img
-                  src="/scale-like-whale.png"
-                  alt="Scale like a whale guarantee"
-                  className="relative h-[140px] sm:h-[160px] w-auto object-contain drop-shadow-[0_8px_24px_rgba(131,58,180,0.25)]"
-                />
-              </div>
+          {/* Big hero whale graphic (matches viralitymedia.in BOX MIKE TYSON scale) */}
+          <div className="flex justify-center -mt-16 sm:-mt-24 lg:-mt-36 mb-4 sm:mb-8">
+            <div className="relative w-full max-w-[830px]">
+              <div
+                aria-hidden
+                className="absolute inset-x-10 top-10 bottom-10 rounded-full blur-3xl opacity-70 pointer-events-none"
+                style={{
+                  background:
+                    "radial-gradient(circle, rgba(131,58,180,0.28), rgba(225,48,108,0.22) 45%, transparent 75%)",
+                }}
+              />
+              <img
+                src="/scale-like-whale.png"
+                alt="Scale like a whale guarantee"
+                className="relative w-full h-auto object-contain drop-shadow-[0_18px_40px_rgba(131,58,180,0.3)]"
+              />
             </div>
+          </div>
 
-            <h2 className="font-display font-extrabold text-[clamp(30px,5vw,52px)] -tracking-[0.03em] leading-[1.05] text-ink mt-8">
+          <div className="text-center max-w-3xl mx-auto">
+            <h2 className="font-display font-extrabold text-[clamp(30px,5vw,52px)] -tracking-[0.03em] leading-[1.05] text-ink">
               The{" "}
               <span className="text-ig-gradient">"Scale Like a Whale"</span>{" "}
               Guarantee

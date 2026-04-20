@@ -1,4 +1,3 @@
-import { X } from "lucide-react";
 import { CTAButton } from "../ui/CTAButton";
 import { Reveal } from "../ui/Reveal";
 
@@ -6,18 +5,22 @@ const pains = [
   {
     title: "Poor Monetization Channels",
     body: "Creators leave money on the table by not giving their audience a way to buy directly from them.",
+    image: "/01.png",
   },
   {
     title: "Operational Headaches",
     body: "You don't have the time to source products, pack boxes, or manage logistics, so you just don't do it.",
+    image: "/02.png",
   },
   {
     title: "Poor Brand Experience",
     body: "Selling cheap, generic print-on-demand tees damages your premium image and trust.",
+    image: "/03.png",
   },
   {
     title: "High Setup Costs",
     body: "Hiring a separate designer, developer, marketer, and operations team drains your capital and takes months to coordinate.",
+    image: "/04.png",
   },
 ];
 
@@ -29,9 +32,8 @@ export function PainPoints() {
           <div className="section-header">
             <span className="badge">Why Most Creators Fail</span>
             <h2>
-              Your Influence Is{" "}
-              <span className="text-ig-gradient italic">Struggling</span> To
-              Scale Profitably
+              <span className="text-ig-gradient italic">THIS IS WHY</span>{" "}
+              Your Influence Struggles To Scale Profitably
             </h2>
             <p>
               These four pain points are silently destroying your earning
@@ -58,13 +60,15 @@ export function PainPoints() {
                       "radial-gradient(circle, rgba(239,68,68,0.25), transparent 70%)",
                   }}
                 />
-                <div
-                  className="w-14 h-14 rounded-[12px] flex items-center justify-center text-brand-red mb-4 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-[-6deg]"
-                  style={{ background: "rgba(239, 68, 68, 0.08)" }}
-                >
-                  <X className="h-6 w-6" strokeWidth={3} />
+                <div className="w-32 h-32 sm:w-36 sm:h-36 mb-5 rounded-[16px] overflow-hidden bg-gradient-to-br from-red-50 to-orange-50 border border-red-100 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 group-hover:-rotate-3">
+                  <img
+                    src={p.image}
+                    alt={p.title}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
                 </div>
-                <h3 className="font-display text-base font-bold -tracking-[0.02em] mb-2 text-ink">
+                <h3 className="font-display text-lg sm:text-xl font-bold -tracking-[0.02em] mb-2 text-ink">
                   {p.title}
                 </h3>
                 <p className="text-[13.5px] text-ink-gray400 leading-[1.65]">

@@ -20,14 +20,21 @@ function App() {
       <div className="min-h-screen bg-white text-ink">
         <Header />
         <main>
+          {/* 1 · Hero + eligibility strip */}
           <Hero />
+          {/* 2 · Proven team stats (social proof) */}
           <SocialProof />
+          {/* 3 · This is WHY — pain points */}
           <PainPoints />
+          {/* 4 · 30-day roadmap + bonus stack */}
           <Solution />
-          <Marquee />
           <Bonus />
+          {/* transition marquee */}
+          <Marquee />
+          {/* 5 · "Scale Like a Whale" team guarantee + scarcity */}
           <Team />
           <Scarcity />
+          {/* Final closing CTA */}
           <FinalCTA />
         </main>
         <Footer />
