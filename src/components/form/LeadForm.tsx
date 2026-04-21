@@ -25,15 +25,29 @@ const followerTiers = [
 
 type FollowerTier = (typeof followerTiers)[number];
 
+const EMAIL_REGEX =
+  /^[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,}$/;
+
 const schema = z.object({
   fullName: z
     .string()
     .trim()
     .min(2, "Please enter your full name")
     .regex(/^[A-Za-z][A-Za-z\s.'-]+$/, "Letters, spaces and . ' - only"),
-  email: z.string().trim().email("Enter a valid email"),
+  email: z
+    .string()
+    .trim()
+    .toLowerCase()
+    .min(5, "Enter a valid email")
+    .max(120, "Email is too long")
+    .regex(EMAIL_REGEX, "Enter a valid email (e.g. you@brand.com)")
+    .refine((v) => !v.includes(".."), "Email cannot contain consecutive dots"),
   countryIso: z.enum(["IN", "US", "GB", "AE", "SG", "AU"]),
-  phone: z.string().trim().min(5, "Enter your mobile number"),
+  phone: z
+    .string()
+    .trim()
+    .min(5, "Enter your mobile number")
+    .regex(/^[0-9\s().+-]+$/, "Digits only"),
   instagram: z
     .string()
     .trim()
@@ -54,8 +68,11 @@ const schema = z.object({
 
 type FormValues = z.infer<typeof schema>;
 
+const LEAD_ENDPOINT = import.meta.env.VITE_LEAD_ENDPOINT as string | undefined;
+
 export function LeadForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const {
     register,
@@ -77,14 +94,53 @@ export function LeadForm() {
     countries.find((c) => c.iso === selectedIso) ?? countries[0];
 
   const onSubmit = async (data: FormValues) => {
+    setSubmitError(null);
     const full = `${selectedCountry.code}${data.phone.replace(/\D/g, "")}`;
     if (!isValidPhoneNumber(full, data.countryIso)) {
       setError("phone", { message: "Please enter a valid mobile number" });
       return;
     }
-    await new Promise((r) => setTimeout(r, 900));
-    console.log("Lead submitted:", { ...data, fullPhone: full });
-    setSubmitted(true);
+
+    if (!LEAD_ENDPOINT) {
+      setSubmitError(
+        "Form endpoint not configured. Please contact the site owner."
+      );
+      return;
+    }
+
+    const payload = {
+      name: data.fullName,
+      email: data.email,
+      phone: full,
+      instagram: `@${data.instagram}`,
+      followers: data.followers,
+      source: "Insta Merch Landing Page",
+    };
+
+    try {
+      const res = await fetch(LEAD_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(payload),
+        redirect: "follow",
+      });
+      const json = (await res.json().catch(() => ({}))) as {
+        success?: boolean;
+        error?: string;
+      };
+      if (!res.ok || json.success !== true) {
+        throw new Error(
+          json.error || "We couldn't submit your details. Please try again."
+        );
+      }
+      setSubmitted(true);
+    } catch (err) {
+      setSubmitError(
+        err instanceof Error
+          ? err.message
+          : "Something went wrong. Please try again."
+      );
+    }
   };
 
   if (submitted) {
@@ -130,7 +186,7 @@ export function LeadForm() {
           Claim Your <span className="text-ig-gradient">Free Session</span>
         </h3>
         <p className="mt-1.5 text-ink-gray600 text-[14px]">
-          30 minutes · No pitch · Just your personalised ₹50L roadmap.
+          30 minutes · Just your personalised ₹50L roadmap.
         </p>
       </div>
 
@@ -247,6 +303,12 @@ export function LeadForm() {
           ))}
         </div>
       </Field>
+
+      {submitError && (
+        <div className="rounded-[10px] border border-brand-danger/40 bg-red-50 px-3 py-2 text-[12.5px] text-brand-danger">
+          {submitError}
+        </div>
+      )}
 
       <button
         type="submit"
